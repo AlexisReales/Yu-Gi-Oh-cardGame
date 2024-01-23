@@ -24,6 +24,8 @@ const state = {
     },
 }
 
+const choseCard = document.querySelector('.card_details')
+
 const pathImages = './src/assets/icons/'
 
 const cardData = [
@@ -121,6 +123,8 @@ async function hiddenCardDetails(){
 async function drawButton(text){
     state.actions.button.innerText = text.toUpperCase()
     state.actions.button.style.display = 'block'
+
+
 }
 
 async function updateScore(){
@@ -178,6 +182,10 @@ async function resetDuel(){
     state.fieldCards.player.style.display = 'none'
     state.fieldCards.computer.style.display = 'none'
 
+    choseCard.innerHTML = `
+    <p id="card-name">Selecione</p>
+    <p id="card-type">Uma Carta</p>
+    `
     init()
 }
 
